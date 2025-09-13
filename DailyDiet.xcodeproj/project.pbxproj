@@ -30,10 +30,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		136BA2902E761F3F00C40709 /* Exceptions for "DailyDiet" folder in "DailyDiet" target */ = {
+		136BA32A2E762DD400C40709 /* Exceptions for "DailyDiet" folder in "DailyDiet" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Resource/Info.plist,
+				Info.plist,
 			);
 			target = 136BA2672E761F3D00C40709 /* DailyDiet */;
 		};
@@ -43,7 +43,7 @@
 		136BA26A2E761F3D00C40709 /* DailyDiet */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				136BA2902E761F3F00C40709 /* Exceptions for "DailyDiet" folder in "DailyDiet" target */,
+				136BA32A2E762DD400C40709 /* Exceptions for "DailyDiet" folder in "DailyDiet" target */,
 			);
 			path = DailyDiet;
 			sourceTree = "<group>";
