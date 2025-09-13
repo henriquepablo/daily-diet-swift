@@ -33,7 +33,7 @@
 		136BA2902E761F3F00C40709 /* Exceptions for "DailyDiet" folder in "DailyDiet" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resource/Info.plist,
 			);
 			target = 136BA2672E761F3D00C40709 /* DailyDiet */;
 		};
@@ -56,6 +56,11 @@
 		136BA28B2E761F3F00C40709 /* DailyDietUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DailyDietUITests;
+			sourceTree = "<group>";
+		};
+		136BA2A52E76270D00C40709 /* Nunito */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Nunito;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -88,6 +93,7 @@
 		136BA25F2E761F3D00C40709 = {
 			isa = PBXGroup;
 			children = (
+				136BA2A52E76270D00C40709 /* Nunito */,
 				136BA26A2E761F3D00C40709 /* DailyDiet */,
 				136BA2812E761F3F00C40709 /* DailyDietTests */,
 				136BA28B2E761F3F00C40709 /* DailyDietUITests */,
@@ -122,6 +128,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				136BA26A2E761F3D00C40709 /* DailyDiet */,
+				136BA2A52E76270D00C40709 /* Nunito */,
 			);
 			name = DailyDiet;
 			packageProductDependencies = (
