@@ -47,7 +47,7 @@ class NewSnackView: UIView {
         let label = UILabel()
         label.text = "snack.label.name".localized
         label.textColor = Colors.gray_200
-        label.font = UIFont(name: "Nunito-Bold", size: 20)
+        label.font = UIFont(name: "Nunito-Bold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -65,7 +65,7 @@ class NewSnackView: UIView {
         let label = UILabel()
         label.text = "snack.label.description".localized
         label.textColor = Colors.gray_200
-        label.font = UIFont(name: "Nunito-Bold", size: 20)
+        label.font = UIFont(name: "Nunito-Bold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -83,7 +83,7 @@ class NewSnackView: UIView {
         let label = UILabel()
         label.text = "snack.label.data".localized
         label.textColor = Colors.gray_200
-        label.font = UIFont(name: "Nunito-Bold", size: 20)
+        label.font = UIFont(name: "Nunito-Bold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -101,7 +101,7 @@ class NewSnackView: UIView {
         let label = UILabel()
         label.text = "snack.label.hour".localized
         label.textColor = Colors.gray_200
-        label.font = UIFont(name: "Nunito-Bold", size: 20)
+        label.font = UIFont(name: "Nunito-Bold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -119,7 +119,7 @@ class NewSnackView: UIView {
         let label = UILabel()
         label.text = "snack.label.hasDiet".localized
         label.textColor = Colors.gray_200
-        label.font = UIFont(name: "Nunito-Bold", size: 20)
+        label.font = UIFont(name: "Nunito-Bold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
