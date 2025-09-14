@@ -74,7 +74,7 @@ class HomeView: UIView {
             logoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -20),
             logoImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             
-            profileImage.centerYAnchor.constraint(equalTo: logoImage.centerYAnchor, constant: -24),
+            profileImage.centerYAnchor.constraint(equalTo: logoImage.centerYAnchor),
             profileImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             
             statisticsView.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 30),
