@@ -31,6 +31,26 @@ class HomeView: UIView {
         return view
     }()
     
+    let textSnack: UILabel = {
+        let label = UILabel()
+        label.text = "Refeições"
+        label.textColor = Colors.gray_100
+        label.font = UIFont(name: "Nunito-Regular", size: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let newSnackButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = Colors.gray_200
+        button.layer.cornerRadius = 6
+        button.setTitle("+ Nova Refeição", for: .normal)
+        button.setTitleColor(Colors.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Nunito-Bold", size: 16)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -44,6 +64,8 @@ class HomeView: UIView {
         addSubview(logoImage)
         addSubview(profileImage)
         addSubview(statisticsView)
+        addSubview(textSnack)
+        addSubview(newSnackButton)
         setupConstraintst()
     }
     
@@ -59,6 +81,14 @@ class HomeView: UIView {
             statisticsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             statisticsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             statisticsView.heightAnchor.constraint(equalToConstant: 102),
+            
+            textSnack.topAnchor.constraint(equalTo: statisticsView.bottomAnchor, constant: 40),
+            textSnack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            
+            newSnackButton.topAnchor.constraint(equalTo: textSnack.bottomAnchor, constant: 5),
+            newSnackButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            newSnackButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            newSnackButton.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
 }
