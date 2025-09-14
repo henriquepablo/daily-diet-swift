@@ -1,0 +1,10 @@
+//
+//  Localizable.strings
+//  CodeTrouble
+//
+//  Created by pablo henrique on 13/09/25.
+//
+
+//MARK: - Statistics
+
+"statistics.label.description" = "das refeições dentro da dieta";

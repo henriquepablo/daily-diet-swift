@@ -24,6 +24,13 @@ class HomeView: UIView {
         return image
     }()
     
+    let statisticsView: StatisticsView = {
+        let view = StatisticsView()
+        view.layer.cornerRadius = 8
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -36,6 +43,7 @@ class HomeView: UIView {
     private func setup() {
         addSubview(logoImage)
         addSubview(profileImage)
+        addSubview(statisticsView)
         setupConstraintst()
     }
     
@@ -44,8 +52,13 @@ class HomeView: UIView {
             logoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -20),
             logoImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             
-            profileImage.centerYAnchor.constraint(equalTo: logoImage.centerYAnchor),
+            profileImage.centerYAnchor.constraint(equalTo: logoImage.centerYAnchor, constant: -24),
             profileImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            
+            statisticsView.topAnchor.constraint(equalTo: logoImage.bottomAnchor, constant: 30),
+            statisticsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            statisticsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            statisticsView.heightAnchor.constraint(equalToConstant: 102),
         ])
     }
 }
