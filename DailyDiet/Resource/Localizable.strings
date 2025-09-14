@@ -8,3 +8,14 @@
 //MARK: - Statistics
 
 "statistics.label.description" = "das refeições dentro da dieta";
+
+
+//MARK: - New Snack
+
+"snack.label.titleScreen" = "Nova Refeição";
+"snack.label.name" = "Nome";
+"snack.label.description" = "Descrição";
+"snack.label.data" = "Data";
+"snack.label.hour" = "Hora";
+"snack.label.hasDiet" = "Está dentro da dieta?";
+"snack.button.addNewSnack" = "Cadastrar nova refeição";
