@@ -19,3 +19,7 @@
 "snack.label.hour" = "Hora";
 "snack.label.hasDiet" = "Está dentro da dieta?";
 "snack.button.addNewSnack" = "Cadastrar nova refeição";
+
+//MARK: - FeedBack
+
+"feedback.button.homePage" = "Ir para a página principal";

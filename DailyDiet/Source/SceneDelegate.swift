@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let viewController = NewSnackViewController()
+        let viewController = FeedBackViewController()
         
         let navigation = UINavigationController(rootViewController: viewController)
         
