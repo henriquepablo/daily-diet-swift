@@ -23,3 +23,10 @@
 //MARK: - FeedBack
 
 "feedback.button.homePage" = "Ir para a página principal";
+
+
+//MARK: -
+
+"preview.label.titleScreen" = "Refeição";
+"preview.button.edit" = "Editar Refeição";
+"preview.button.delete" = "Excluir Refeição";
