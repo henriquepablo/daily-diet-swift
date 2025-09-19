@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var flowController: DailyDietFlowController?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -20,12 +21,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
+        flowController = DailyDietFlowController()
+        
         let viewController = PreviewSnackViewController()
         
-        let navigation = UINavigationController(rootViewController: viewController)
+        let rootViewController = flowController?.start()
         
-        window.rootViewController = navigation
+        window.rootViewController = rootViewController
+        
         self.window = window
+        
         window.makeKeyAndVisible()
     }
 
