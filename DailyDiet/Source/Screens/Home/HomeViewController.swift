@@ -36,6 +36,7 @@ class HomeViewController: UIViewController {
         self.view.addSubview(contentView)
         setupConstraintst()
         self.contentView.newSnackButton.addTarget(self, action: #selector(didTappedNavigeteNewSnack), for: .touchUpInside)
+        setupTapGestureOnStatistics()
     }
     
     private func setupConstraintst() {
@@ -50,5 +51,19 @@ class HomeViewController: UIViewController {
     @objc
     private func didTappedNavigeteNewSnack() {
         flowDelegate.navigatetToNewSnack()
+    }
+    
+    private func setupTapGestureOnStatistics() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTappedStatistics))
+        contentView.statisticsView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc
+    private func didTappedStatistics() {
+        UIView.animate(withDuration: 0.3,
+                       delay: 0.0,
+                       animations: { [self] in
+            contentView.statisticsView.alpha = 0.5
+        })
     }
 }
