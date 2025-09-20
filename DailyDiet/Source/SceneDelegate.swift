@@ -23,8 +23,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         flowController = DailyDietFlowController()
         
-        let viewController = PreviewSnackViewController()
-        
         let rootViewController = flowController?.start()
         
         window.rootViewController = rootViewController

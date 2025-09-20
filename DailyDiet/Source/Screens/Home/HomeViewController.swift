@@ -34,8 +34,8 @@ class HomeViewController: UIViewController {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         self.view.backgroundColor = Colors.gray_700
         self.view.addSubview(contentView)
-        
         setupConstraintst()
+        self.contentView.newSnackButton.addTarget(self, action: #selector(didTappedNavigeteNewSnack), for: .touchUpInside)
     }
     
     private func setupConstraintst() {
@@ -45,5 +45,10 @@ class HomeViewController: UIViewController {
             contentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
+    }
+    
+    @objc
+    private func didTappedNavigeteNewSnack() {
+        flowDelegate.navigatetToNewSnack()
     }
 }

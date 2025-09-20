@@ -14,4 +14,8 @@ class ViewControllersFactory: ViewControllersFactoryProtocol {
         return viewController
     }
     
+    func makeNewSnackViewController(flowDelegate: NewSnackFlowDelegate) -> NewSnackViewController {
+        let viewController = NewSnackViewController(contentView: NewSnackView(), flowDelegate: flowDelegate)
+        return viewController
+    }
 }

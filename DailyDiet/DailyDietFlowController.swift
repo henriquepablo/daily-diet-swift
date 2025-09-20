@@ -31,4 +31,22 @@ class DailyDietFlowController {
 
 extension DailyDietFlowController: HomeFlowDelegate {
     
+    func navigatetToNewSnack() {
+        
+        let viewController = viewControllerFactory.makeNewSnackViewController(flowDelegate: self)
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+}
+
+
+extension DailyDietFlowController: NewSnackFlowDelegate {
+    
+    func backToHome() {
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    
+    
 }

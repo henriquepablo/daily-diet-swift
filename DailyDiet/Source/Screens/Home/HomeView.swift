@@ -71,7 +71,7 @@ class HomeView: UIView {
     
     private func setupConstraintst() {
         NSLayoutConstraint.activate([
-            logoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: -20),
+            logoImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             logoImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             
             profileImage.centerYAnchor.constraint(equalTo: logoImage.centerYAnchor),

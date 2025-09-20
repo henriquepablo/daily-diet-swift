@@ -10,4 +10,5 @@ import Foundation
 protocol ViewControllersFactoryProtocol: AnyObject {
     
     func makeHomeViewController(flowDelegate: HomeFlowDelegate) -> HomeViewController
+    func makeNewSnackViewController(flowDelegate: NewSnackFlowDelegate) -> NewSnackViewController
 }
