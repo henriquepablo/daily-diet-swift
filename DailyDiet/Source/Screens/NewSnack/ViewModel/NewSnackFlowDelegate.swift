@@ -10,4 +10,5 @@ import Foundation
 public protocol NewSnackFlowDelegate: AnyObject {
     
     func backToHome()
+    func displayFeedBackView(feedback: Bool)
 }

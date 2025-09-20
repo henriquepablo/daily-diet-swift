@@ -23,4 +23,9 @@ class ViewControllersFactory: ViewControllersFactoryProtocol {
         let viewController = GeneralStatisticsViewController(contentView: GeneralStatisticsView(), flowDelegate: flowDelegate)
         return viewController
     }
+    
+    func makeFeedBackViewController(flowDelegate: FeedBackFlowDelegate, feedback: Bool) -> FeedBackViewController {
+        let viewController = FeedBackViewController(contentView: FeedBackView(feedback: feedback), flowDelegate: flowDelegate)
+        return viewController
+    }
 }

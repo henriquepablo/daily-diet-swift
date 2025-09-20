@@ -60,3 +60,15 @@ extension DailyDietFlowController: GeneralStatisticsFlowDelegate {
     
     
 }
+
+extension DailyDietFlowController: FeedBackFlowDelegate {
+    
+    
+    func displayFeedBackView(feedback: Bool) {
+        let viewController = viewControllerFactory.makeFeedBackViewController(flowDelegate: self, feedback: feedback)
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    
+}

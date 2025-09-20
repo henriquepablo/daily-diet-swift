@@ -12,6 +12,7 @@ class NewSnackViewController: UIViewController {
     
     let contentView: NewSnackView
     let flowDelegate: NewSnackFlowDelegate
+    let viewModel = NewSnackViewModel()
     var option = false
 
     init(contentView: NewSnackView, flowDelegate: NewSnackFlowDelegate) {
@@ -83,8 +84,25 @@ class NewSnackViewController: UIViewController {
         guard let description = contentView.inputDescription.text else { return }
         guard let data = contentView.inputData.text else { return }
         guard let hour = contentView.inputHour.text else { return }
-        let hasDiet = self.option
         
-        print(name, description, data, hour, hasDiet)
+        if (name.isEmpty || description.isEmpty || data.isEmpty || hour.isEmpty) {
+            let alert = UIAlertController(title: "Cadastrar Refeição", message: "Preencha todos os campos para prosseguir", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+            return
+        }
+        
+        viewModel.addNewSnack(name: name, description: description, data: data, hour: hour, hasDiet: self.option) { success in
+            DispatchQueue.main.async {
+                if (success) {
+                    self.flowDelegate.displayFeedBackView(feedback: self.option)
+                }
+                else {
+                    let alert = UIAlertController(title: "Cadastrar Refeição", message: "Houve um erro para finalizar", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(alert, animated: true)
+                }
+            }
+        }
     }
 }

@@ -10,11 +10,33 @@ import UIKit
 
 class FeedBackViewController: UIViewController {
     
-    let contentView = FeedBackView(feedback: true)
+    
+    let contentView: FeedBackView
+    let flowDelegate: FeedBackFlowDelegate
+    
+    init(contentView: FeedBackView, flowDelegate: FeedBackFlowDelegate) {
+        self.contentView = contentView
+        self.flowDelegate = flowDelegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     private func setup() {
