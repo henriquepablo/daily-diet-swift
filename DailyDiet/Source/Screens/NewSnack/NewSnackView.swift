@@ -147,7 +147,7 @@ class NewSnackView: UIView {
     }()
 
     let buttonAddNewSnack: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle("snack.button.addNewSnack".localized, for: .normal)
         button.setTitleColor(Colors.white, for: .normal)
         button.backgroundColor = Colors.gray_200
