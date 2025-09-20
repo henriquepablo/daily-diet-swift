@@ -38,6 +38,11 @@ extension DailyDietFlowController: HomeFlowDelegate {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    func navigateToGeneralStatistics() {
+        let viewController = viewControllerFactory.makeGeneralStatisticsViewController(flowDelegate: self)
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 
@@ -47,6 +52,11 @@ extension DailyDietFlowController: NewSnackFlowDelegate {
         self.navigationController?.popViewController(animated: true)
         
     }
+    
+    
+}
+
+extension DailyDietFlowController: GeneralStatisticsFlowDelegate {
     
     
 }

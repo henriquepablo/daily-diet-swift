@@ -10,4 +10,6 @@ import Foundation
 public protocol HomeFlowDelegate: AnyObject {
     
     func navigatetToNewSnack()
+    
+    func navigateToGeneralStatistics()
 }

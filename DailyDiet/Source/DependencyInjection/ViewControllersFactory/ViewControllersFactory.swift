@@ -18,4 +18,9 @@ class ViewControllersFactory: ViewControllersFactoryProtocol {
         let viewController = NewSnackViewController(contentView: NewSnackView(), flowDelegate: flowDelegate)
         return viewController
     }
+    
+    func makeGeneralStatisticsViewController(flowDelegate: GeneralStatisticsFlowDelegate) -> GeneralStatisticsViewController {
+        let viewController = GeneralStatisticsViewController(contentView: GeneralStatisticsView(), flowDelegate: flowDelegate)
+        return viewController
+    }
 }

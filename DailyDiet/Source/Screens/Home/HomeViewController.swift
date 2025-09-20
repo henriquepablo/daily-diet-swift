@@ -60,10 +60,11 @@ class HomeViewController: UIViewController {
     
     @objc
     private func didTappedStatistics() {
-        UIView.animate(withDuration: 0.3,
+        flowDelegate.navigateToGeneralStatistics()
+        /*UIView.animate(withDuration: 0.3,
                        delay: 0.0,
                        animations: { [self] in
             contentView.statisticsView.alpha = 0.5
-        })
+        })*/
     }
 }

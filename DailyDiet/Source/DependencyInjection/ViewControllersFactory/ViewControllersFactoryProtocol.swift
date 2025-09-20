@@ -11,4 +11,5 @@ protocol ViewControllersFactoryProtocol: AnyObject {
     
     func makeHomeViewController(flowDelegate: HomeFlowDelegate) -> HomeViewController
     func makeNewSnackViewController(flowDelegate: NewSnackFlowDelegate) -> NewSnackViewController
+    func makeGeneralStatisticsViewController(flowDelegate: GeneralStatisticsFlowDelegate) -> GeneralStatisticsViewController
 }
