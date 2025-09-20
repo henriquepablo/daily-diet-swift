@@ -70,11 +70,12 @@ class NewSnackView: UIView {
         return label
     }()
     
-    let inputDescription: UITextField = {
-        let input = UITextField()
+    let inputDescription: UITextView = {
+        let input = UITextView()
         input.layer.borderColor = Colors.gray_500.cgColor
         input.layer.borderWidth = 0.8
         input.layer.cornerRadius = 6
+        input.textAlignment = .justified
         input.translatesAutoresizingMaskIntoConstraints = false
         return input
     }()

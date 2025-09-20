@@ -48,6 +48,7 @@ class NewSnackViewController: UIViewController {
         contentView.buttonYes.addTarget(self, action: #selector(selectOptionYes), for: .touchUpInside)
         contentView.buttonNo.addTarget(self, action: #selector(selectOptionNo), for: .touchUpInside)
         contentView.backButton.addTarget(self, action: #selector(didTappedBack), for: .touchUpInside)
+        contentView.buttonAddNewSnack.addTarget(self, action: #selector(didTappedNewSnack), for: .touchUpInside)
     }
     
     private func setupConstraintst() {
@@ -74,5 +75,16 @@ class NewSnackViewController: UIViewController {
     @objc
     private func didTappedBack() {
         self.flowDelegate.backToHome()
+    }
+    
+    @objc
+    private func didTappedNewSnack() {
+        guard let name = contentView.inputName.text else { return }
+        guard let description = contentView.inputDescription.text else { return }
+        guard let data = contentView.inputData.text else { return }
+        guard let hour = contentView.inputHour.text else { return }
+        let hasDiet = self.option
+        
+        print(name, description, data, hour, hasDiet)
     }
 }
