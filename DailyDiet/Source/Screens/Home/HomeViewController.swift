@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
         setupConstraintst()
         self.contentView.newSnackButton.addTarget(self, action: #selector(didTappedNavigeteNewSnack), for: .touchUpInside)
         setupTapGestureOnStatistics()
+        setupTableView()
     }
     
     private func setupConstraintst() {
@@ -61,10 +62,37 @@ class HomeViewController: UIViewController {
     @objc
     private func didTappedStatistics() {
         flowDelegate.navigateToGeneralStatistics()
-        /*UIView.animate(withDuration: 0.3,
-                       delay: 0.0,
-                       animations: { [self] in
-            contentView.statisticsView.alpha = 0.5
-        })*/
     }
+    
+    private func setupTableView() {
+        contentView.tableView.dataSource = self
+        contentView.tableView.delegate = self
+        contentView.tableView.register(SnackCell.self, forCellReuseIdentifier: SnackCell.identifier)
+        contentView.tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
+        
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+
+}
+
+extension HomeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: SnackCell.identifier, for: indexPath) as! SnackCell
+        
+        //cell.configure(hour: "20:00", name: "X-Tudo", hasDiet: true)
+        return cell
+    }
+    
+    
 }
