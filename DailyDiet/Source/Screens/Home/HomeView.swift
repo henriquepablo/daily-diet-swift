@@ -51,6 +51,14 @@ class HomeView: UIView {
         return button
     }()
     
+    let tableView: UITableView = {
+        let table = UITableView()
+        table.backgroundColor = .clear
+        table.separatorStyle = .none
+        table.translatesAutoresizingMaskIntoConstraints = false
+        return table
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -66,6 +74,7 @@ class HomeView: UIView {
         addSubview(statisticsView)
         addSubview(textSnack)
         addSubview(newSnackButton)
+        addSubview(tableView)
         setupConstraintst()
     }
     
@@ -88,7 +97,13 @@ class HomeView: UIView {
             newSnackButton.topAnchor.constraint(equalTo: textSnack.bottomAnchor, constant: 5),
             newSnackButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             newSnackButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            newSnackButton.heightAnchor.constraint(equalToConstant: 60)
+            newSnackButton.heightAnchor.constraint(equalToConstant: 60),
+            
+            tableView.topAnchor.constraint(equalTo: newSnackButton.bottomAnchor, constant: 20),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            
         ])
     }
 }
