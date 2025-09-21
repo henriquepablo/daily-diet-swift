@@ -45,6 +45,7 @@ class FeedBackViewController: UIViewController {
         self.view.addSubview(contentView)
         
         setupConstraints()
+        contentView.buttonHomePage.addTarget(self, action: #selector(didTappedBack), for: .touchUpInside)
     }
     
     private func setupConstraints() {
@@ -54,5 +55,10 @@ class FeedBackViewController: UIViewController {
             contentView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
+    }
+    
+    @objc
+    private func didTappedBack() {
+        flowDelegate.backToHome()
     }
 }

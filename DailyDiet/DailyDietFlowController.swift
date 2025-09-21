@@ -49,7 +49,7 @@ extension DailyDietFlowController: HomeFlowDelegate {
 extension DailyDietFlowController: NewSnackFlowDelegate {
     
     func backToHome() {
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
         
     }
     
@@ -62,13 +62,12 @@ extension DailyDietFlowController: GeneralStatisticsFlowDelegate {
 }
 
 extension DailyDietFlowController: FeedBackFlowDelegate {
-    
+
     
     func displayFeedBackView(feedback: Bool) {
         let viewController = viewControllerFactory.makeFeedBackViewController(flowDelegate: self, feedback: feedback)
         
         self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
     
 }

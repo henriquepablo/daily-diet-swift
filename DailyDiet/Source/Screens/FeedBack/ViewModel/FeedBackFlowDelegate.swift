@@ -10,5 +10,6 @@ import Foundation
 public protocol FeedBackFlowDelegate: AnyObject {
     
     func displayFeedBackView(feedback: Bool)
+    func backToHome()
     
 }
