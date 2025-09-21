@@ -13,6 +13,8 @@ class HomeViewController: UIViewController {
     
     let contentView: HomeView
     let flowDelegate: HomeFlowDelegate
+    let viewModel = HomeViewModel()
+    var snacksDataSource: [SnackModel] = []
     
     init(contentView: HomeView, flowDelegate: HomeFlowDelegate) {
         self.contentView = contentView
@@ -28,6 +30,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        getSnacks()
     }
     
     private func setup() {
@@ -71,6 +74,20 @@ class HomeViewController: UIViewController {
         contentView.tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
         
     }
+    
+    private func getSnacks() {
+        viewModel.getSnacks() { result in
+            switch result {
+                case .success(let response):
+                    DispatchQueue.main.async {
+                        self.snacksDataSource.append(contentsOf: response)
+                        self.contentView.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print("❌ Erro:", error.localizedDescription)
+            }
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDelegate {
@@ -79,20 +96,39 @@ extension HomeViewController: UITableViewDelegate {
         return 60
     }
 
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 8
+    }
+    
 }
 
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        return snacksDataSource.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SnackCell.identifier, for: indexPath) as! SnackCell
-        
-        //cell.configure(hour: "20:00", name: "X-Tudo", hasDiet: true)
+        let snack = snacksDataSource[indexPath.row]
+        cell.configure(hour: snack.hora, name: snack.name, hasDiet: snack.hasDiet)
         return cell
     }
     
     
+}
+
+struct DayModel: Decodable {
+    var id: Int
+    var date: String
+}
+
+struct SnackModel: Decodable {
+    var id: Int
+    var name: String
+    var description: String
+    var hora: String
+    var hasDiet: Bool
+    var day: DayModel
 }
